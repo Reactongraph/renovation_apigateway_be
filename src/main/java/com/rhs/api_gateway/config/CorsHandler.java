@@ -1,4 +1,4 @@
-package com.tripply.tripplyapigateway.config;
+package com.rhs.api_gateway.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,13 +14,12 @@ public class CorsHandler {
     @Bean
     public CorsWebFilter corsWebFilter() {
         final CorsConfiguration corsConfig = new CorsConfiguration();
-        corsConfig.setAllowedOrigins(Collections.singletonList("http://localhost:3721"));
+        corsConfig.setAllowedOrigins(Collections.singletonList("http://localhost:3000")); // Update to match your actual origin
         corsConfig.setMaxAge(3600L);
-        corsConfig.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE"));
+        corsConfig.setAllowedMethods(Arrays.asList("DELETE", "GET"," HEAD","OPTIONS","PATCH","POST","PUT"));
         corsConfig.addAllowedHeader("*");
         final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", corsConfig);
         return new CorsWebFilter(source);
     }
-
 }
