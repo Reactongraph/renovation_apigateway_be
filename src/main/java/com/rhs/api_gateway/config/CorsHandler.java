@@ -14,7 +14,7 @@ public class CorsHandler {
     @Bean
     public CorsWebFilter corsWebFilter() {
         final CorsConfiguration corsConfig = new CorsConfiguration();
-        corsConfig.setAllowedOrigins(Collections.singletonList("http://localhost:3000")); // Update to match your actual origin
+        corsConfig.setAllowedOrigins(Collections.singletonList("*")); // Allows all origins
         corsConfig.setMaxAge(3600L);
         corsConfig.setAllowedMethods(Arrays.asList("DELETE", "GET"," HEAD","OPTIONS","PATCH","POST","PUT"));
         corsConfig.addAllowedHeader("*");
