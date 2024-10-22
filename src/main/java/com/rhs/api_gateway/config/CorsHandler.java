@@ -14,7 +14,7 @@ public class CorsHandler {
     @Bean
     public CorsWebFilter corsWebFilter() {
         final CorsConfiguration corsConfig = new CorsConfiguration();
-        corsConfig.setAllowedOrigins(Collections.singletonList("*")); // Allows all origins
+        corsConfig.setAllowedOrigins(Collections.singletonList("https://renovation-household-service.vercel.app")); // Allow specific origin
         corsConfig.setMaxAge(3600L);
         corsConfig.setAllowedMethods(Arrays.asList("DELETE", "GET"," HEAD","OPTIONS","PATCH","POST","PUT"));
         corsConfig.addAllowedHeader("*");
