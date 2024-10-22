@@ -14,10 +14,8 @@ public class CorsHandler {
     @Bean
     public CorsWebFilter corsWebFilter() {
         final CorsConfiguration corsConfig = new CorsConfiguration();
-        corsConfig.setAllowedOrigins(Arrays.asList(
-                "https://renovation-household-service.vercel.app", // Allow production origin
-                "http://localhost:3000"// Allow local development origin
-        ));        corsConfig.setMaxAge(3600L);
+        corsConfig.setAllowedOrigins(Collections.singletonList("*")); // Allows all origins
+        corsConfig.setMaxAge(3600L);
         corsConfig.setAllowedMethods(Arrays.asList("DELETE", "GET"," HEAD","OPTIONS","PATCH","POST","PUT"));
         corsConfig.addAllowedHeader("*");
         final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
